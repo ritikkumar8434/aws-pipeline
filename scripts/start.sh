@@ -2,15 +2,19 @@
 echo "Starting new Docker container..."
 
 # Stop and remove any old container if exists
-if [ "$(docker ps -q -f name=phpapp)" ]; then
+if [ "$(sudo docker ps -q -f name=phpapp)" ]; then
     echo "Stopping existing container..."
-    docker stop phpapp
-    docker rm phpapp
+    sudo docker stop phpapp
+    sudo docker rm phpapp
 fi
 
+echo "Authenticating to AWS ECR..."
+aws ecr get-login-password --region ap-south-1 \
+| docker login --username AWS --password-stdin 220766171134.dkr.ecr.ap-south-1.amazonaws.com
+
 # Pull and start the latest image
-docker pull 220766171134.dkr.ecr.ap-south-1.amazonaws.com/php-rds-app:latest
-docker run -d --name phpapp -p 80:80 220766171134.dkr.ecr.ap-south-1.amazonaws.com/php-rds-app:latest
+sudo docker pull 220766171134.dkr.ecr.ap-south-1.amazonaws.com/php-rds-app:latest
+sudo docker run -d --name phpapp -p 80:80 220766171134.dkr.ecr.ap-south-1.amazonaws.com/php-rds-app:latest
 
 echo "Container started successfully!"
 

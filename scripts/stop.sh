@@ -1,5 +1,4 @@
 #!/bin/bash
-echo "Stopping existing Docker containers..."
-docker stop phpapp || true
-docker rm phpapp || true
-
+echo "Stopping existing Docker container..."
+sudo docker stop phpapp || true
+sudo docker rm phpapp || true
