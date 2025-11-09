@@ -113,7 +113,7 @@ sudo systemctl status codedeploy-agent
 
 ### 🗂️ 5. Prepare Application Files  
 
-Ensure your GitHub repository includes the following at its **root level**:
+Ensure your GitHub repository includes the following at its **root level**.:
 
 ```
 📁 Repository Root
