@@ -241,5 +241,5 @@ Developer → GitHub → CodePipeline → CodeBuild → ECR → CodeDeploy → E
 ## 👨‍💻 Author  
 
 **Ritik Kumar Sahu**  
-📧 [ritikkumarsahu.dev@gmail.com]  
+📧 [ritikkumar3g@gmail.com]  
 💼 Cybersecurity & DevOps Engineer | AWS | Docker | Kubernetes | Jenkins | Terraform  
