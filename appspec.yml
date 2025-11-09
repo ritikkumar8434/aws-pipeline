@@ -1,0 +1,16 @@
+version: 0.0
+os: linux
+files:
+  - source: /
+    destination: /root/aws-pipeline/app
+
+hooks:
+  BeforeInstall:
+    - location: scripts/stop.sh
+      timeout: 300
+      runas: ubuntu
+  AfterInstall:
+    - location: scripts/start.sh
+      timeout: 300
+      runas: ubuntu
+
